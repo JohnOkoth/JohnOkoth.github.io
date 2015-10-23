@@ -6,9 +6,9 @@
 
 <body>
 
-My analysis for prediciting Classe variable involved extracting the data for Human workout provided by Groupware@less. The data had respective predictor variables for different types of workout. I went through the process of pruning the variables that had a higher amount of missing data, and irrelevant data by creating a function that did the clean up. 
+My analysis for prediciting "Classe" variable involved extracting the data for Human workout provided by Groupware@less. The data had respective predictor variables for different types of workout. I went through the process of pruning the variables that had a higher amount of missing data, and irrelevant data by creating a function that did the clean up. 
 
-There are two functions that I created, one for cleaning up the data (preprocess) and the other for cleaning and partitioning the data (partition). The partitioned data from "train" generated both the training and testing data, with the randomForest package used to model the training data under the Caret package. I later used the test data to predict the Classe outcome, and performed the degree of accuracy with reference to the Classe variable from the testing data.This was done under the confusionMatrix function. The test data that I uploaded from the prescribed website, served the purpose of predicting the 20 cases as was assigned.
+There are two functions that I created, one for cleaning up the data (preprocess) and the other for cleaning and partitioning the data (partition). The partitioned data from "train" generated both the training and testing data, with the randomForest package used to model the training data under the Caret package. I later used the partitioned "train" data to predict the "Classe" outcome, and performed the degree of accuracy with reference to the "Classe" variable from the testing data.This was done under the confusionMatrix function. The "test" data that I uploaded from the prescribed website, served the purpose of predicting the 20 cases as was assigned.
 
 The cross validation generated 25 resamples under the bootstrap method without replacement. The caret function for creating the cross validation, chose the value by default, and under the ressampling process, respective parameters were obtained with the highest value of accuracy estimate chosen under modeling tree number 27.
 
