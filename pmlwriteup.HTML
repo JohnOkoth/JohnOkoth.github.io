@@ -12,7 +12,7 @@ There are two functions that I created, one for cleaning up the data (preprocess
 
 The cross validation generated 25 resamples under the bootstrap method with replacement from the training data. The caret function for creating the cross validation, chose the value by default, and under the resampling process, respective parameters were obtained with the highest value of accuracy estimate chosen under modeling tree number 27.
 
-This model was the best since it gave an accuracy of 99.5%, with an output sample error of 0.06796941% in relation to the function I computed in the R-Code under line 66 and 69 respectively in the .Rmd file.Under the confusionMatrix function, there were only three errors predicted i.e two B's and one C giving proof that the model was robust in predicting Classe.
+This model was the best since it gave an accuracy of 99.5%, with an output sample error of 0.06796941% in relation to the function I computed in the R-Code under line 66 and 69 respectively in the .Rmd file.The out of sample error is obtained by subtracting the ratio of the sum of equal values of predicted "classe" from training data and "classe" from testing data, to length of prediction from one. Under the confusionMatrix function, there were only three errors predicted i.e two B's and one C giving proof that the model was robust in predicting Classe.
 
 
 
