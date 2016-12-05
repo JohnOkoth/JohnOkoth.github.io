@@ -1,0 +1,70 @@
+---
+output:
+  html_document: default
+  
+params:
+  clm.count: as.character("")
+  data: as.character("")
+  exposure: as.character("")
+  model: as.character("")
+  observed: as.character("")
+  variable: as.character("")
+  variance.data: as.character("")
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\pagenumbering{gobble}
+
+# `r gsub('_',' ',params$variable)`
+
+Date Produced: `r format(Sys.time(), '%d %B, %Y')`
+
+```{r data, echo=FALSE, message=FALSE, warning=FALSE}
+X<-TDTools::Plot.Data(DATA = params$data,
+                      VARIANCE.DATA = params$data,
+                      NAMES = list(MODELS    = params$model,
+                                   OBSERVED  = params$observed,
+                                   CLM.COUNT = params$clm.count,
+                                   EXPOSURE  = params$exposure,
+                                   VARIABLE  = params$variable),
+                      MODE = "ALL",
+                      EVAL.VARIANCE = T,
+                      SPLIT.VARIANCE = F,
+                      N.BKTS = 20)
+
+```
+
+
+## Predicted vs. Observed Chart
+
+```{r PvO, echo=FALSE, message=FALSE, warning=FALSE}
+TDTools::PvO.Chart(X)
+
+```
+
+
+## Discrepency Chart
+
+```{r disc, echo=FALSE, message=FALSE, warning=FALSE}
+TDTools::Discrepency.Chart(X)
+
+```
+
+
+## Deviation Chart
+
+```{r devi, echo=FALSE, message=FALSE, warning=FALSE}
+TDTools::Deviation.Chart(X)
+
+```
+
+
+
+
+
+
+
+
