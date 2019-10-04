@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Date Produced: `r format(Sys.time(), '%d %B, %Y')`
 
 ```{r data, echo=FALSE, message=FALSE, warning=FALSE}
-X<-TDTools::Plot.Data(DATA = params$data,
+X<-MyTools::Plot.Data(DATA = params$data,
                       VARIANCE.DATA = params$data,
                       NAMES = list(MODELS    = params$model,
                                    OBSERVED  = params$observed,
@@ -41,7 +41,7 @@ X<-TDTools::Plot.Data(DATA = params$data,
 ## Predicted vs. Observed Chart
 
 ```{r PvO, echo=FALSE, message=FALSE, warning=FALSE}
-TDTools::PvO.Chart(X)
+MyTools::PvO.Chart(X)
 
 ```
 
@@ -49,7 +49,7 @@ TDTools::PvO.Chart(X)
 ## Discrepency Chart
 
 ```{r disc, echo=FALSE, message=FALSE, warning=FALSE}
-TDTools::Discrepency.Chart(X)
+MyTools::Discrepency.Chart(X)
 
 ```
 
@@ -57,7 +57,7 @@ TDTools::Discrepency.Chart(X)
 ## Deviation Chart
 
 ```{r devi, echo=FALSE, message=FALSE, warning=FALSE}
-TDTools::Deviation.Chart(X)
+MyTools::Deviation.Chart(X)
 
 ```
 
