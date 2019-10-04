@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Date Produced: `r format(Sys.time(), '%d %B, %Y')`
 
 ```{r data, echo=FALSE, message=FALSE, warning=FALSE}
-X<-TDTools::Plot.Data(DATA = params$data,
+X<-MyTools::Plot.Data(DATA = params$data,
                       VARIANCE.DATA = params$data,
                       NAMES = list(MODELS    = params$model,
                                    OBSERVED  = params$observed,
@@ -44,7 +44,7 @@ X<-TDTools::Plot.Data(DATA = params$data,
 
 ## Predicted vs. Observed Chart
 
-![](`r TDTools::PvO.Chart(X, AS.PDF = T)`)
+![](`r MyTools::PvO.Chart(X, AS.PDF = T)`)
 \begin{center}
 \begin{Form}
 \TextField[name=comment1, multiline=true, align=0, width=400pt, height=6\baselineskip]{ }
@@ -53,7 +53,7 @@ X<-TDTools::Plot.Data(DATA = params$data,
 
 ## Discrepency Chart
 
-![](`r TDTools::Discrepency.Chart(X, AS.PDF = T)`)
+![](`r MyTools::Discrepency.Chart(X, AS.PDF = T)`)
 \begin{center}
 \begin{Form}
 \TextField[name=comment2, multiline=true, align=0, width=400pt, height=6\baselineskip]{ }
@@ -63,7 +63,7 @@ X<-TDTools::Plot.Data(DATA = params$data,
 
 ## Deviation Chart
 
-![](`r TDTools::Deviation.Chart(X,DATA.ONLY=TRUE,AS.PDF = T)`)
+![](`r MyTools::Deviation.Chart(X,DATA.ONLY=TRUE,AS.PDF = T)`)
 \begin{center}
 \begin{Form}
 \TextField[name=comment3, multiline=true, align=0, width=400pt, height=6\baselineskip]{ }
